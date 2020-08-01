@@ -1,0 +1,67 @@
+.textPadrao{
+    font-family: 'Roboto', sans-serif;
+    color: #8a272c;
+    font-size: 14pt;
+}
+.textMenu{
+    font-family: 'Roboto', sans-serif;
+    color: #8a272c;
+    font-size: 12pt;
+}
+.textMenu:hover{
+    color: #8a272c;
+    text-decoration: none;
+}
+.cardTitle{
+    background-color: #8A272C;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+}
+.text-previa{
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 8;
+    -webkit-box-orient: vertical;
+}
+.text-previa-noticia{
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+.bg-button{
+    background-color: #8a272c;
+    color: #fff;
+}
+.bg-button:hover{
+    color: #cecece;
+}
+.text-button{
+    color: #fff;
+}
+.text-button:hover{
+    color:#cecece;
+}
+.btn-link-gc:hover{
+    text-decoration: underline;
+}
+.bg-header-login{
+    background-color: #fff;
+}
+.dropdown-item:active{
+    background-color: #cecece;
+}
+.capitalize{
+    text-transform: capitalize;
+}
+.font{
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    font-size: 12pt;
+}
+.font:hover{
+    color: #cecece;
+    text-decoration: none;
+}
+
+
