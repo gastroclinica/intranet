@@ -1,0 +1,60 @@
+.card{
+    border: 0;
+    padding: 15px;
+    color: var(--color-text-black);
+}
+.card .space{
+    padding: 0;
+}
+.card .space li{
+        list-style: none;
+        font-size: 1.2rem;
+        color: var(--color-text-gray);
+}
+.card h1 {
+    font-weight: bolder;
+    font-size: 3rem;
+    color: var(--color-primary-text);
+}
+.card h2 {
+    font-weight: bolder;
+    color: var(--color-primary-text);
+}
+.card h6 {
+    font-size: 1.4rem;
+    font-weight: bolder;
+    color: var(--color-primary-text);
+}
+.card p {
+    color: var(--color-text-gray);
+    font-size: 1.2rem;
+}
+.card small {
+    color: var(--color-text-gray);
+    font-size: 1rem;
+}
+.card #button-default {
+    background: var(--color-background-primary);
+    color: var(--color-text-white);
+}
+.card #button-default:hover {
+    color: var(--color-secondary-text);
+    transition: color 0,5s;
+}
+.card #news {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+.card #news p {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 8;
+    -webkit-box-orient: vertical;
+}
+@media(min-width: 1100px){
+    .carousel-inner .carousel-item img{
+        max-height: 400px;
+      }
+}

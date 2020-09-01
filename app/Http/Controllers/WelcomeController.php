@@ -16,7 +16,7 @@ class WelcomeController extends Controller
     public function index()
     {
         $menus = Menu::all();
-        $notices = Notice   ::orderBy('created_at', 'DESC')->limit(1)->get();
+        $notices = Notice   ::orderBy('created_at', 'DESC')->limit(2)->get();
         $data = [
             'menus'=>$menus,
             'notices'=>$notices,

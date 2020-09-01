@@ -1,67 +1,81 @@
-.textPadrao{
-    font-family: 'Roboto', sans-serif;
-    color: #8a272c;
-    font-size: 14pt;
+:root{
+    --color-primary-text: #81211f;
+    --color-secondary-text: #cecece;
+    --color-text-gray: #485460;
+    --color-text-black: #000000;
+    --color-text-white: #ffffff;
+    --color-text-primary-hover:  #ac3b40;
+    --color-background-gray: #d1d8e0;
+    --color-background-primary: #81211f;
+    --color-background-secondary: #ffffff;
+    --color-background-hover: #ac3b40;
+    
+    font-size: 90%;
 }
-.textMenu{
-    font-family: 'Roboto', sans-serif;
-    color: #8a272c;
-    font-size: 12pt;
+@font-face {
+    font-family: 'GlacialIndifference';
+    src: url(../fonts/glacial/glacial-indifference-regular.otf);
 }
-.textMenu:hover{
-    color: #8a272c;
+body{
+    background: var(--color-background-primary);
+    font-family: GlacialIndifference;
+}
+main{
+    background: var(--color-background-secondary);
+}
+p {
+    color: var(--color-primary-text);
+    font-size: 15px;
+}
+main #container{
+    position: relative;
+    margin-top: -18px;
+}
+.navbar ul{
+    display: flex;
+    position: relative;
+    left: -3rem;
+}
+.navbar-nav li a{
+    color: var(--color-primary-text);
+    line-height: 2rem;
+    display: flex;
+    align-items: center;
+    padding-left: 0.6rem;
+}
+.navbar-nav li a:hover{
     text-decoration: none;
+    color: var(--color-text-white);
+    background: var(--color-background-primary);
+    border-radius: 0.2rem;
+    transition: color 0.4s;
 }
-.cardTitle{
-    background-color: #8A272C;
-    color: #fff;
-    font-family: 'Roboto', sans-serif;
-}
-.text-previa{
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 8;
-    -webkit-box-orient: vertical;
-}
-.text-previa-noticia{
+#card-news{
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
 }
-.bg-button{
-    background-color: #8a272c;
-    color: #fff;
+#card-news p{
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 8;
+    -webkit-box-orient: vertical;
 }
-.bg-button:hover{
-    color: #cecece;
+#card-select{
+    margin: 0 1.4rem;
 }
-.text-button{
-    color: #fff;
+@media(min-width:1199px){
+    .navbar-nav li a:hover{
+        text-decoration: none;
+        background: transparent;
+        color: var(--color-text-primary-hover);
+    }
+    .navbar-nav li a{
+        font-size: 1.2rem;
+        padding-left: 0;
+    }
+    .dropdown-menu a {
+        margin-left: 10px;
+    }
 }
-.text-button:hover{
-    color:#cecece;
-}
-.btn-link-gc:hover{
-    text-decoration: underline;
-}
-.bg-header-login{
-    background-color: #fff;
-}
-.dropdown-item:active{
-    background-color: #cecece;
-}
-.capitalize{
-    text-transform: capitalize;
-}
-.font{
-    font-family: 'Roboto', sans-serif;
-    color: #fff;
-    font-size: 12pt;
-}
-.font:hover{
-    color: #cecece;
-    text-decoration: none;
-}
-
-

@@ -5,17 +5,17 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card text-center">
-                    <div class="card-header textMenu">Permissões</div>
+                    <h2>Permissões</h2>
 
                     <div class="card-body">
                         
                         @if (session('message'))
-                            <div class="alert alert-success" role="alert">
+                            <div class="alert alert-success mt-2" role="alert">
                                 {{ session('message') }}
                             </div>
                         @endif
                         <div class="d-flex justify-content-start">
-                            <a class="btn bg-button" href="{{ route('permission.create') }}"><i class="fa fa-plus" aria-hidden="true"></i> Cadastrar Permissão</a>
+                            <a class="btn mr-2" id="btn-default" href="{{ route('permission.create') }}"><i class="fa fa-plus" aria-hidden="true"></i> Cadastrar Permissão</a>
                         </div>
 
                         @if($errors)

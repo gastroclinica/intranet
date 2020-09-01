@@ -1,8 +1,7 @@
 @extends('layouts.app')
 @section('title', 'Ramais')
 @section('content')
-    <div class="container">
-        <div class="row justify-content-center ">
+        <div class="d-flex justify-content-center ">
             <div class="col-md-10">
                         @if (session('message'))
                             <div class="alert alert-success" role="alert">
@@ -10,7 +9,7 @@
                             </div>
                         @endif
                         @can('Cadastrar Ramal')
-                          <a href="{{route('branch.create')}}" class="btn bg-button"><i class="fa fa-plus" aria-hidden="true"></i> Criar Ramal</a>
+                          <a href="{{route('branch.create')}}" class="btn mt-5 mr-2" id="btn-default"><i class="fa fa-plus" aria-hidden="true"></i> Criar Ramal</a>
                         @endcan
                         @if($errors)
                             @foreach($errors->all() as $error)
@@ -20,9 +19,9 @@
                             @endforeach
                         @endif
 
-                        <table class="table table-striped mt-4">
+                        <table class="table table-striped">
                             <thead>
-                            <tr class="textMenu">
+                            <tr>
                                 <th>Setor</th>
                                 <th>Ramal</th>
                                 <th>Funciona de:</th>
@@ -37,23 +36,21 @@
                             <tbody>
 
                                 @foreach($branchs as $branch)
-                                    <tr class="textMenu capitalize">
+                                    <tr>
                                         <td>{{ $branch -> sector }}</td>
                                         <td>{{ $branch -> branch }}</td>
                                         <td> {{ date("H:i", strtotime($branch -> operation_initial)) }} as {{ date("H:i", strtotime($branch -> operation_end)) }}</td>
                                         <td>{{ $branch -> collaborator }}</td>
-                                        <td class="d-flex">
+                                        <td class="d-flex justify-content-center">
                                             @can('Editar Ramal')
-                                                <button class="btn bg-button mx-2">
-                                                    <a class="text-button" href="{{ route('branch.edit' , ['branch' => $branch -> id]) }}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> Editar
-                                                </button>
+                                                    <a class="btn mx-2" id="btn-default" href="{{ route('branch.edit' , ['branch' => $branch -> id]) }}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</a>
                                             @endcan
                                             @can('Excluir Ramal')
                                                 <form action="{{ route('branch.destroy' , ['branch' => $branch -> id]) }}" method="post">
                                                     @csrf
                                                     @method('delete')
 
-                                                    <button class="btn bg-button">
+                                                    <button class="btn" id="btn-default">
                                                         <a><i class="fa fa-trash" aria-hidden="true"></i></a> Excluir
                                                     </button>
                                                 </form>
@@ -65,5 +62,4 @@
                         </table>
             </div>
         </div>
-    </div>
 @endsection

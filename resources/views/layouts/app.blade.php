@@ -12,19 +12,20 @@
     <!-- Scripts -->
 
     <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
 
     <!-- Styles -->
     <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('css/styles/welcome.css')}}">
+    <link rel="stylesheet" href="{{asset('css/styles/defaults.css')}}">
     <link rel="stylesheet" href="{{asset('fontawesome/css/all.css')}}" >
-    <link rel="stylesheet" href="{{ asset('fonts/font-awesome/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{asset('fonts/font-awesome/css/font-awesome.min.css') }}">
+    <link rel="shortcut icon" href="{{asset('img/logo-favicon.png')}}" type="image/x-icon">
 
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-xl navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     <img src="{{asset('img\bg.png')}}" width='150'>
@@ -34,37 +35,43 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-
-                    </ul>
-
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
-                        @guest
-                            <li class="nav-item">
-                                <a class="nav-item textMenu" href="{{ route('login') }}">Entrar</a>
+                            <li class="ml-5"><a href="{{url('/')}}">Home</a></li>
+                            <li class="ml-5"><a href="{{route('branch.index')}}">Ramais</a></li>
+                            <li class="ml-5"><a href="{{route('menu.index')}}">Nutrição</a></li>
+                            <li class="ml-5"><a href="{{route('notice.index')}}">Notícias</a></li>
+                            <li class="dropdown ml-5">
+                                <a href="#" class="dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>Qualidade</a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a href="https://forms.gle/RTUq6gfYkTpvsLHLA" class="dropdown-item" target="_blank">Notificação de Eventos Adversos</a>
+                                    <a href="https://forms.gle/aRHb3j8kBMAWTLis8" class="dropdown-item" target="_blank">Registro de Não Conformidade</a>
+                                </div>
                             </li>
+                            <li class="ml-5"><a href="http://192.168.0.30:58080/fortesrh/login.action;jsessionid=0D1A4C34060E36C4E0E9364F4922C26D" target="_blank">Acesso a folha</a></li>
+                            <li class="ml-5"><a href="http://mail.gastroclinicahospital.com.br/" target="_blank">Email</a></li>
+                        @guest
+                        <li class="ml-5"><a class="" href="{{ route('login') }}">Entrar</a>
+                        </li>
                         @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="dropdown-toggle textMenu" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre><i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                            <li class="dropdown ml-5">
+                                <a id="navbarDropdown" class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     @can('Informatica')
-                                        <a class="dropdown-item textMenu teste" href="{{ route('user.index') }}">Gestão de Usuário</a>
-                                        <a class="dropdown-item textMenu" href="{{ route('role.index') }}">Gestão de Perfis</a>
-                                        <a class="dropdown-item textMenu" href="{{ route('permission.index') }}">Gestão de Permissões</a>
-                                        <a class="dropdown-item textMenu" href="{{ route('register') }}">Registrar</a>
+                                        <a class="dropdown-item" href="{{ route('user.index') }}">Gestão de Usuário</a>
+                                        <a class="dropdown-item" href="{{ route('role.index') }}">Gestão de Perfis</a>
+                                        <a class="dropdown-item" href="{{ route('permission.index') }}">Gestão de Permissões</a>
+                                        <a class="dropdown-item" href="{{ route('register') }}">Registrar</a>
                                     @endcan
-                                        <a class="dropdown-item textMenu" href="{{ route('logout') }}"
+                                        <a class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">
                                             Sair
                                         </a>
-
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
@@ -75,22 +82,10 @@
                 </div>
             </div>
         </nav>
-        <div class="d-flex justify-content-center bg-button">
-            <div class="mt-2">
-                <div class="row">
-                    <p class="ml-5"><a href="{{url('/')}}" class="font"><i class="fa fa-home mr-1" aria-hidden="true"></i> Home</a></p>
-                    <p class="ml-5"><a href="{{route('branch.index')}}" class="font"><i class="fa fa-phone mr-1" aria-hidden="true"></i> Ramais</a></p>
-                    <p class="ml-5"><a href="{{route('menu.index')}}" class="font"><i class="fa fa-cutlery mr-1" aria-hidden="true"></i> Nutrição</a></p>
-                    <p class="ml-5"><a href="{{route('notice.index')}}" class="font"><i class="fa fa-television mr-1" aria-hidden="true"></i> Notícias</a></p>
-                    <p class="ml-5"><a href="http://192.168.0.30:58080/fortesrh/login.action;jsessionid=0D1A4C34060E36C4E0E9364F4922C26D" class="font" target="_blank"><i class="fa fa-file-text mr-1" aria-hidden="true"></i> Acesso a folha</a></p>
-                    <p class="ml-5"><a href="http://mail.gastroclinicahospital.com.br/" target="_blank" class="font"><i class="fa fa-envelope mr-1"></i> Email</a></p>
-                </div>
-            </div>
-        </div>
         <div class="">
             @yield('session')
         </div>
-        <main class="container py-4">
+        <main class="container col-10">
             @yield('content')
         </main>
         <script src="{{asset('js/jquery.min.js')}}"></script>

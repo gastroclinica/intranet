@@ -22,7 +22,9 @@
     </div>
 
     <div class="col-10">
-
+        <div class="mb-4">
+            <a class="btn mt-5" id="btn-default" href="{{ route('menu.index') }}"><i class="fa fa-reply" aria-hidden="true"></i> Voltar para a listagem</a>
+        </div>
         <form action="{{ route('menu.update', ['menu' => $menu -> id]) }}" method="post" class="mt-4" autocomplete="off">
             @csrf
             @method('PUT')
@@ -43,7 +45,7 @@
         </div>
 
         <div class="d-flex justify-content-end mt-2">
-            <button type="submit" class="btn bg-button"><i class="fa fa-floppy-o" aria-hidden="true"></i> Alterar</button>
+            <button type="submit" class="btn" id="btn-default"><i class="fa fa-floppy-o" aria-hidden="true"></i> Alterar</button>
         </div>
     </form>
     </div>

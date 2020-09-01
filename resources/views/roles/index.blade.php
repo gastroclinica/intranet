@@ -4,19 +4,19 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <div class="card text-center textMenu">
-                    <div class="card-header">Perfis</div>
+                <div class="card text-center">
+                    <h2>Perfis</h2>
 
                     <div class="card-body">
 
                         @if (session('message'))
-                            <div class="alert alert-success" role="alert">
+                            <div class="alert alert-success mt-2" role="alert">
                                 {{ session('message') }}
                             </div>
                         @endif
 
                         <div class="d-flex justify-content">
-                            <a class="btn bg-button" href="{{ route('role.create') }}"><i class="fa fa-plus" aria-hidden="true"></i> Cadastrar Perfil</a>
+                            <a class="btn" id="btn-default" href="{{ route('role.create') }}"><i class="fa fa-plus" aria-hidden="true"></i> Cadastrar Perfil</a>
                         </div>
 
                         @if($errors)
@@ -27,7 +27,7 @@
                             @endforeach
                         @endif
 
-                        <table class="table table-striped mt-4 textMenu">
+                        <table class="table table-striped mt-4">
                             <thead>
                             <tr>
                                 <th>Perfil</th>

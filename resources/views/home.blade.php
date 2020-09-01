@@ -25,7 +25,7 @@
 </div>
 <script>
     setTimeout(function(){
-        window.location.href = "http://localhost/intranet/public/"
+        window.location.href = "/intranet/public/"
     },2000);
 </script>
 @endsection

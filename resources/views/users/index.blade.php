@@ -5,18 +5,18 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card text-center">
-                    <div class="card-header textMenu">Gestão de Usuários</div>
+                    <h2>Gestão de Usuários</h2>
 
                     <div class="card-body">
                         
                         @if (session('message'))
-                            <div class="alert alert-success" role="alert">
+                            <div class="alert alert-success mt-2" role="alert">
                                 {{ session('message') }}
                             </div>
                         @endif
 
                         <div class="d-flex justify-content-start">
-                            <a class="btn bg-button" href="{{ route('user.create') }}"><i class="fa fa-plus" aria-hidden="true"></i> Cadastrar Usuário</a>
+                            <a class="btn" id="btn-default" href="{{ route('user.create') }}"><i class="fa fa-plus" aria-hidden="true"></i> Cadastrar Usuário</a>
                         </div>
 
                         @if($errors)

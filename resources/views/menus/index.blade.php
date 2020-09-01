@@ -2,14 +2,13 @@
     @section('title', 'Refeição')
         @section('content')
             <div class="d-flex justify-content-center">
-                <div class="col-10 textPadrao">
+                <div class="col-10">
                     @can('Cadastrar Refeicao')
-                        <a href="{{route('menu.create')}}" class="btn bg-button mt-2"><i class="fa fa-plus" aria-hidden="true"></i> Nova Refeição</a>
+                        <a href="{{route('menu.create')}}" class="btn mt-5 mr-2" id="btn-default"><i class="fa fa-plus" aria-hidden="true"></i> Nova Refeição</a>
                     @endcan
-
                     <div class="card-body">
                         @if (session('message'))
-                            <div class="alert alert-success" role="alert">
+                            <div class="alert alert-success mt-2" role="alert">
                                 {{ session('message') }}
                             </div>
                         @endif
@@ -21,7 +20,8 @@
                             @endforeach
                         @endif
                     </div>
-                        <table class="table table-striped table-bordered text-center textMenu">
+                        
+                        <table class="table table-striped">
                             <thead>
                                 <tr>
                                     <th colspan="4" class="">Cardápio</th>
@@ -35,7 +35,7 @@
                                     <td>{{$menu->description}}</td>
                                     @can('Editar Refeicao')
                                     <td>
-                                        <a class="btn bg-button" href="{{ route('menu.edit' , ['menu' => $menu -> id]) }}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</a>
+                                        <a class="btn" href="{{ route('menu.edit' , ['menu' => $menu -> id]) }}" id="btn-default"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</a>
                                     </td>
                                     @endcan
                                 </tr>

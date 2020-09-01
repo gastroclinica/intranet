@@ -1,25 +1,26 @@
 @extends('layouts.app')
 @section('title', 'Ramais')
 @section('content')
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-10">
-                <div class="mb-4">
-                    <a class="btn bg-button" href="{{ route('branch.index') }}"><i class="fa fa-reply" aria-hidden="true"></i> Voltar para a listagem</a>
+        <div class="d-flex justify-content-center">
+            <div class="col-10">
+                <div>
+                    <a class="btn mt-5" id="btn-default" href="{{ route('branch.index') }}"><i class="fa fa-reply" aria-hidden="true"></i> Voltar para a listagem</a>
                 </div>
-                        @if (session('message'))
-                            <div class="alert alert-success" role="alert">
+                        <div class="card-body">
+                            @if (session('message'))
+                            <div class="alert alert-success mt-2" role="alert">
                                 {{ session('message') }}
                             </div>
                         @endif
                         @if($errors)
                             @foreach($errors->all() as $error)
-                                <div class="alert alert-danger mt-4" role="alert">
+                                <div class="alert alert-danger mt-2" role="alert">
                                     {{ $error }}
                                 </div>
                             @endforeach
                         @endif
-                        <form action="{{ route('branch.store') }}" method="post" class="" autocomplete="off">
+                        </div>
+                        <form action="{{ route('branch.store') }}" method="post" autocomplete="off">
                             @csrf
                             <div class="form-group">
                                 <label for="email" class="textMenu">Setor</label>
@@ -42,12 +43,11 @@
                                 <textarea class="form-control" name="collaborator" id="collaborator" cols="30" rows="2"placeholder="Informe o nome dos Responsáveis" required></textarea>
                             </div>
                             <div class="d-flex justify-content-end">
-                                <button type="submit" class="btn bg-button textMenu">
+                                <button type="submit" class="btn" id="btn-default">
                                     <i class="fa fa-floppy-o" aria-hidden="true"></i>
                                     Salvar</button>
                             </div>
                         </form>
             </div>
         </div>
-    </div>
 @endsection

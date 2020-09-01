@@ -4,18 +4,18 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <div class="card textMenu">
-                    <div class="card-header text-center">Criar Perfil</div>
+                <div class="card">
+                    <h2 class="text-center">Criar Perfil</h2>
 
                     <div class="card-body">
 
                         @if (session('message'))
-                            <div class="alert alert-success" role="alert">
+                            <div class="alert alert-success mt-2" role="alert">
                                 {{ session('message') }}
                             </div>
                         @endif
 
-                        <a class="btn bg-button" href="{{ route('role.index') }}"><i class="fa fa-reply" aria-hidden="true"></i> Voltar para a listagem</a>
+                        <a class="btn" id="btn-default" href="{{ route('role.index') }}"><i class="fa fa-reply" aria-hidden="true"></i> Voltar para a listagem</a>
 
                         @if($errors)
                             @foreach($errors->all() as $error)
@@ -34,7 +34,7 @@
                                        name="name" value="{{ old('name') }}">
                             </div>
                             <div class="d-flex justify-content-end">
-                                <button type="submit" class="btn bg-button"><i class="fa fa-floppy-o" aria-hidden="true"></i> Salvar</button>
+                                <button type="submit" class="btn" id="btn-default"><i class="fa fa-floppy-o" aria-hidden="true"></i> Salvar</button>
                             </div>
                         </form>
                     </div>

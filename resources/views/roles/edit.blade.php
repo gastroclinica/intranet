@@ -4,18 +4,18 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <div class="card textMenu">
-                    <div class="card-header text-center">Editar Perfil</div>
+                <div class="card">
+                    <h2 class="text-center">Editar Perfil</h2>
 
                     <div class="card-body">
 
                         @if (session('message'))
-                            <div class="alert alert-success" role="alert">
+                            <div class="alert alert-success mt-2" role="alert">
                                 {{ session('message') }}
                             </div>
                         @endif
 
-                        <a class="btn bg-button" href="{{ route('role.index') }}"><i class="fa fa-reply" aria-hidden="true"></i>
+                        <a class="btn" id="btn-default" href="{{ route('role.index') }}"><i class="fa fa-reply" aria-hidden="true"></i>
                             Voltar para a listagem</a>
 
                         @if($errors)
@@ -36,7 +36,7 @@
                                        name="name" value="{{ old('name') ?? $role -> name}}">
                             </div>
                             <div class="d-flex justify-content-end">
-                                <button type="submit" class="btn bg-button"><i class="fa fa-floppy-o" aria-hidden="true"></i> Alterar</button>
+                                <button type="submit" class="btn" id="btn-default"><i class="fa fa-floppy-o" aria-hidden="true"></i> Alterar</button>
                             </div>
                         </form>
                     </div>
